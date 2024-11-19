@@ -21,7 +21,6 @@ const Header = () => {
             University Name
           </a>
           
-          {/* Mobile menu button */}
           <button
             className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -35,15 +34,17 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-college-primary hover:text-college-accent transition-colors flex items-center gap-2"
+                className="text-college-primary hover:text-college-accent transition-colors flex items-center gap-2 group"
               >
-                <item.icon size={16} />
-                <span>{item.label}</span>
+                <item.icon size={16} className="group-hover:scale-110 transition-transform" />
+                <span className="relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-college-accent after:origin-bottom-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-bottom-left">
+                  {item.label}
+                </span>
               </a>
             ))}
             <a
               href="#apply"
-              className="bg-college-accent text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors"
+              className="bg-college-accent text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors hover:scale-105 transform duration-200"
             >
               Apply Now
             </a>
@@ -51,26 +52,26 @@ const Header = () => {
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <nav className="lg:hidden py-4 animate-fade-up">
+        <div className={`fixed top-20 right-0 h-screen w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <nav className="py-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-2 px-4 py-3 text-college-primary hover:text-college-accent hover:bg-college-light transition-colors"
+                className="flex items-center gap-3 px-6 py-4 text-college-primary hover:text-college-accent hover:bg-college-light transition-all group"
               >
-                <item.icon size={20} />
+                <item.icon size={20} className="group-hover:scale-110 transition-transform" />
                 <span>{item.label}</span>
               </a>
             ))}
             <a
               href="#apply"
-              className="block mx-4 mt-4 bg-college-accent text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors text-center"
+              className="block mx-6 mt-6 bg-college-accent text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all text-center hover:scale-105 transform duration-200"
             >
               Apply Now
             </a>
           </nav>
-        )}
+        </div>
       </div>
     </header>
   );
