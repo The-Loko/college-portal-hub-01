@@ -17,8 +17,15 @@ const Header = () => {
     <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="text-2xl font-bold text-college-primary">
-            University Name
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="https://placehold.co/50x50/8B5CF6/ffffff?text=CU"
+              alt="College Logo"
+              className="w-12 h-12 rounded-full"
+            />
+            <span className="text-2xl font-bold text-college-primary">
+              University Name
+            </span>
           </Link>
           
           <button
