@@ -10,9 +10,7 @@ const Header = () => {
     { label: "About Us", href: "/about-us" },
     { label: "Departments", href: "/departments" },
     { label: "Facilities", href: "/facilities" },
-    { label: "Admission", href: "/admission" },
     { label: "Photo Gallery", href: "/gallery" },
-    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -23,7 +21,6 @@ const Header = () => {
             University Name
           </Link>
           
-          {/* Mobile Menu Button - Only visible on mobile */}
           <button
             className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -32,7 +29,6 @@ const Header = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Desktop Navigation - Hidden on mobile */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
@@ -48,7 +44,7 @@ const Header = () => {
               </Link>
             ))}
             <Link
-              to="/admission"
+              to="/about-us#apply"
               className="bg-college-accent text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors hover:scale-105 transform duration-200"
             >
               Apply Now
@@ -56,7 +52,6 @@ const Header = () => {
           </nav>
         </div>
 
-        {/* Mobile Menu - Slides in from left */}
         <div 
           className={`fixed top-20 left-0 w-full h-[calc(100vh-5rem)] bg-white transform transition-transform duration-300 ease-in-out md:hidden ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
@@ -82,7 +77,7 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                to="/admission"
+                to="/about-us#apply"
                 className="mt-4 bg-college-accent text-white p-4 rounded-xl text-lg font-medium text-center hover:bg-opacity-90 transition-all hover:scale-105 transform duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
