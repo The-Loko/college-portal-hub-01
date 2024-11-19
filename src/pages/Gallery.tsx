@@ -1,4 +1,6 @@
-import React from "react";
+```typescript
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Gallery = () => {
   const images = [
@@ -29,36 +31,41 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-college-primary mb-12 animate-fade-up">
-          Photo Gallery
-        </h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-xl shadow-lg animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src={image.url}
-                  alt={image.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-white text-lg font-semibold">{image.title}</h3>
+    <div className="min-h-screen">
+      <Header />
+      <main className="pt-20">
+        <div className="container mx-auto px-4 py-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-college-primary mb-12 animate-fade-up">
+            Photo Gallery
+          </h1>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-xl shadow-lg animate-fade-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="aspect-w-16 aspect-h-9">
+                  <img
+                    src={image.url}
+                    alt={image.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white text-lg font-semibold">{image.title}</h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };
 
 export default Gallery;
+```
