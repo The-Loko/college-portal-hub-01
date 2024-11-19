@@ -44,7 +44,7 @@ const Header = () => {
               </Link>
             ))}
             <Link
-              to="/about-us#apply"
+              to="/apply"
               className="bg-college-accent text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors hover:scale-105 transform duration-200"
             >
               Apply Now
@@ -77,7 +77,7 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                to="/about-us#apply"
+                to="/apply"
                 className="mt-4 bg-college-accent text-white p-4 rounded-xl text-lg font-medium text-center hover:bg-opacity-90 transition-all hover:scale-105 transform duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >

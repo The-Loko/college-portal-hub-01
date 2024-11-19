@@ -75,88 +75,36 @@ const AboutUs = () => {
                     <label className="block text-sm font-medium text-college-primary mb-1">
                       Name
                     </label>
-                    <input
+                    <Input
                       type="text"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-college-accent focus:border-transparent"
+                      placeholder="Enter your name"
+                      className="w-full"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-college-primary mb-1">
                       Email
                     </label>
-                    <input
+                    <Input
                       type="email"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-college-accent focus:border-transparent"
+                      placeholder="Enter your email"
+                      className="w-full"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-college-primary mb-1">
                       Message
                     </label>
-                    <textarea
-                      rows={4}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-college-accent focus:border-transparent"
-                    ></textarea>
+                    <Textarea
+                      placeholder="Type your message here"
+                      className="w-full"
+                    />
                   </div>
                   <button className="w-full bg-college-accent text-white py-3 rounded-lg hover:bg-opacity-90 transition-colors">
                     Send Message
                   </button>
                 </form>
               </div>
-            </div>
-          </section>
-
-          <section id="apply" className="animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-college-primary mb-12">
-              Apply Now
-            </h2>
-            <div className="bg-college-light p-8 rounded-xl">
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-college-primary mb-1">
-                    Full Name
-                  </label>
-                  <Input
-                    type="text"
-                    placeholder="Enter your full name"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-college-primary mb-1">
-                    Email
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-college-primary mb-1">
-                    Phone Number
-                  </label>
-                  <Input
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-college-primary mb-1">
-                    Program of Interest
-                  </label>
-                  <select className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-college-accent focus:border-transparent">
-                    <option>Select a program</option>
-                    <option>Computer Science</option>
-                    <option>Business Administration</option>
-                    <option>Engineering</option>
-                  </select>
-                </div>
-                <button className="w-full bg-college-accent text-white py-3 rounded-lg hover:bg-opacity-90 transition-colors">
-                  Submit Application
-                </button>
-              </form>
             </div>
           </section>
         </div>
